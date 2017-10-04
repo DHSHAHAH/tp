@@ -1,0 +1,97 @@
+     [echo] name====${component.name}
+
+install-db:
+     [echo] name====${component.name}
+
+Error-check:
+     [echo] name====${component.name}
+
+arg-check:
+
+file-check:
+
+unzip-tar.gz:
+   [delete] Deleting directory /data/crestelsetup/deliverables/installationdir
+    [mkdir] Created dir: /data/crestelsetup/deliverables/installationdir
+   [gunzip] Expanding /data/crestelsetup/deliverables/CRESTEL-WOM-DB-6.2.2.5.0_MR32.tar.gz to /data/crestelsetup/crestelinstaller/buildscripts/CRESTEL-WOM-DB-6.2.2.5.0_MR32.tar
+    [untar] Expanding: /data/crestelsetup/crestelinstaller/buildscripts/CRESTEL-WOM-DB-6.2.2.5.0_MR32.tar into /data/crestelsetup/deliverables/installationdir
+   [delete] Deleting: /data/crestelsetup/crestelinstaller/buildscripts/CRESTEL-WOM-DB-6.2.2.5.0_MR32.tar
+
+install-db-version:
+     [echo] Installation of database started. Please wait...
+
+upgrade-database-version:
+     [echo] In update-database-version
+
+check-db-required-version:
+     [echo] In check-db-required-version
+     [echo] Required database version: 6.2.2.5.0.31, New version: 6.2.2.5.0.32
+
+get-db-password:
+     [echo]  --- wom.db.user = CRESTELWOMDEV622... bil.db.paswd = CRESTELWOMDEV622
+     [echo] DB URL :: jdbc:oracle:thin:@192.168.2.105:1521:orcl == MODULE SCHEMA :: crestelwom == DB ENV :: DEV622 == PASSWORD :: CRESTELWOMDEV622
+      [sql] Executing commands
+      [sql] 1 of 1 SQL statements executed successfully
+     [echo] Current database installed version: 6.2.2.5.0.31
+     [echo] Required database version is available. Condition check successful
+
+upgrade-database:
+     [echo] In upgrade-database
+     [echo] Loading script information from:/data/crestelsetup/deliverables/installationdir 
+     [echo] Database schemas to upgrade: CRESTELWOMDEV622 from CRESTEL-WOM-DB-6.2.2.5.0_MR32.properties
+
+upgrade-database-schema:
+     [echo] In upgrade-database-schema
+     [echo] Database scripts to execute: MR32/02_UpdateIMEI.sql,MR32/03_Add_field_imeiList_HSS_LDVS_LDS_SIT_LDVCM.sql,MR32/04_UdcIMEIOperations.sql, on CRESTELWOMDEV622 from CRESTEL-WOM-DB-6.2.2.5.0_MR32
+
+get-db-password:
+
+execute-dbscript:
+     [echo] Executing: CRESTELWOMDEV622: /data/crestelsetup/deliverables/installationdir/MR32/02_UpdateIMEI.sql
+[ora:sqlplus] SP2-0310: unable to open file "/data/crestelsetup/deliverables/installationdir/MR32/02_UpdateIMEI.sql"
+
+execute-dbscript:
+     [echo] Executing: CRESTELWOMDEV622: /data/crestelsetup/deliverables/installationdir/MR32/03_Add_field_imeiList_HSS_LDVS_LDS_SIT_LDVCM.sql
+[ora:sqlplus] SP2-0310: unable to open file "/data/crestelsetup/deliverables/installationdir/MR32/03_Add_field_imeiList_HSS_LDVS_LDS_SIT_LDVCM.sql"
+
+execute-dbscript:
+     [echo] Executing: CRESTELWOMDEV622: /data/crestelsetup/deliverables/installationdir/MR32/04_UdcIMEIOperations.sql
+[ora:sqlplus] SP2-0310: unable to open file "/data/crestelsetup/deliverables/installationdir/MR32/04_UdcIMEIOperations.sql"
+
+update-db-installed-version:
+     [echo] In update-db-installed-version
+     [echo] Updating database version : 6.2.2.5.0.32
+
+get-db-password:
+     [echo] DB URL :: jdbc:oracle:thin:@192.168.2.105:1521:orcl == MODULE SCHEMA :: crestelwom == DB ENV :: DEV622 == PASSWORD :: CRESTELWOMDEV622
+      [sql] Executing commands
+      [sql] 1 rows affected
+      [sql] 1 of 1 SQL statements executed successfully
+     [echo] Database version history updated
+      [sql] Executing commands
+      [sql] 1 of 1 SQL statements executed successfully
+      [sql] Executing commands
+      [sql] 2 rows affected
+      [sql] 1 of 1 SQL statements executed successfully
+     [echo] Database version record updated from 6.2.2.5.0.31 to 6.2.2.5.0.32
+     [echo] Moving file database version file CRESTEL-WOM-DB-6.2.2.5.0_MR32.tar.gz to path /data/crestelsetup/deliverables/successbuilds
+     [move] Moving 1 file to /data/crestelsetup/deliverables/successbuilds
+   [delete] Deleting directory /data/crestelsetup/deliverables/installationdir
+     [echo] 
+     [echo]  CRESTEL-WOM-DB-6.2.2.5.0_MR32.tar.gz DB installation ERRORs
+     [echo] =================================== 
+     [echo]  
+     [echo] 
+     [echo] execute-dbscript:
+     [echo]      [echo] Executing: CRESTELWOMDEV622: /data/crestelsetup/deliverables/installationdir/MR32/02_UpdateIMEI.sql
+     [echo] [ora:sqlplus] SP2-0310: unable to open file "/data/crestelsetup/deliverables/installationdir/MR32/02_UpdateIMEI.sql"
+     [echo] 
+     [echo] execute-dbscript:
+     [echo]      [echo] Executing: CRESTELWOMDEV622: /data/crestelsetup/deliverables/installationdir/MR32/03_Add_field_imeiList_HSS_LDVS_LDS_SIT_LDVCM.sql
+     [echo] [ora:sqlplus] SP2-0310: unable to open file "/data/crestelsetup/deliverables/installationdir/MR32/03_Add_field_imeiList_HSS_LDVS_LDS_SIT_LDVCM.sql"
+     [echo] 
+     [echo] execute-dbscript:
+     [echo]      [echo] Executing: CRESTELWOMDEV622: /data/crestelsetup/deliverables/installationdir/MR32/04_UdcIMEIOperations.sql
+     [echo] [ora:sqlplus] SP2-0310: unable to open file "/data/crestelsetup/deliverables/installationdir/MR32/04_UdcIMEIOperations.sql"
+     [echo] 
+     [echo]  
